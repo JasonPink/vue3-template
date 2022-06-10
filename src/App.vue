@@ -3,10 +3,10 @@ import HelloWorld from "./components/HelloWorld.vue";
 console.log(123);
 </script>
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
-<style>
+<style lang="scss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

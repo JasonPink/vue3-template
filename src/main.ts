@@ -1,8 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import router from "@/router/index";
 
-createApp(App).mount("#app");
+const app = createApp(App);
 
-for (var i = 1; i < 10; i++) {
-  console.log(123);
-}
+app.use(router);
+
+app.mount("#app");
