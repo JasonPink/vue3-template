@@ -1,6 +1,7 @@
 <template>
   <div class="common-views-box">
     <!-- Your content -->
+    切换email
   </div>
 </template>
 
