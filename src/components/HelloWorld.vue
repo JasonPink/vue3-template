@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-defineProps<{ msg: string }>();
-
-const count = ref(0);
+defineProps<{ msg: string; count: number }>();
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>{{ msg + count }}</h1>
 
   <p>
     Recommended IDE setup:
