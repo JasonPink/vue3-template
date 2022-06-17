@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
     "prettier": "prettier --write .",
@@ -12,6 +12,7 @@
     "plop": "plop"
   },
   "dependencies": {
+    "element-plus": "^2.2.5",
     "pinia": "^2.0.14",
     "vue": "^3.2.25",
     "vue-router": "4"
