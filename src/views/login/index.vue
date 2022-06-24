@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>wudi</div>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from "vue";
@@ -11,6 +11,7 @@ export default defineComponent({
     const data = reactive({});
     const refData = toRefs(data);
     return { ...refData };
+    console.log("123");
   },
 });
 </script>
