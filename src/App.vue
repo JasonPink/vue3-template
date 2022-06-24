@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
 <template>
-  <router-view></router-view>
+  <div class="box">
+    <layout />
+  </div>
 </template>
+<script setup lang="ts">
+import Layout from './layout/index.vue';
+</script>
+
 <style lang="scss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

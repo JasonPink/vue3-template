@@ -1,17 +1,17 @@
 <template>
-  <div>wudi</div>
+  <div>登录</div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from "vue";
+import { defineComponent, reactive, toRefs } from 'vue';
 export default defineComponent({
-  name: "",
+  name: '',
   components: {},
   props: {},
   setup() {
     const data = reactive({});
     const refData = toRefs(data);
     return { ...refData };
-    console.log("123");
+    console.log('123');
   },
 });
 </script>

@@ -1,35 +1,37 @@
-const path = require("path");
-const fs = require("fs");
+// const path = require('path');
+import path from 'path';
+// const fs = require('fs');
+import fs from 'fs';
 
 function getFolder(path) {
   let components = [];
   const files = fs.readdirSync(path);
   files.forEach(function (item) {
-    let stat = fs.lstatSync(path + "/" + item);
-    if (stat.isDirectory() === true && item != "components") {
-      components.push(path + "/" + item);
-      components.push.apply(components, getFolder(path + "/" + item));
+    let stat = fs.lstatSync(path + '/' + item);
+    if (stat.isDirectory() === true && item != 'components') {
+      components.push(path + '/' + item);
+      components.push.apply(components, getFolder(path + '/' + item));
     }
   });
   return components;
 }
 
 module.exports = {
-  description: "创建页面",
+  description: '创建页面',
   prompts: [
     {
-      type: "list",
-      name: "path",
-      message: "请选择页面创建目录",
-      choices: getFolder("src/views"),
+      type: 'list',
+      name: 'path',
+      message: '请选择页面创建目录',
+      choices: getFolder('src/views'),
     },
     {
-      type: "input",
-      name: "name",
-      message: "请输入文件名",
+      type: 'input',
+      name: 'name',
+      message: '请输入文件名',
       validate: (v) => {
-        if (!v || v.trim === "") {
-          return "文件名不能为空";
+        if (!v || v.trim === '') {
+          return '文件名不能为空';
         } else {
           return true;
         }
@@ -37,12 +39,12 @@ module.exports = {
     },
   ],
   actions: (data) => {
-    let relativePath = path.relative("src/views", data.path);
+    let relativePath = path.relative('src/views', data.path);
     const actions = [
       {
-        type: "add",
+        type: 'add',
         path: `${data.path}/{{dotCase name}}.vue`,
-        templateFile: "plop-tpls/view/index.hbs",
+        templateFile: 'plop-tpls/view/index.hbs',
         data: {
           componentName: `${relativePath} ${data.name}`,
         },
