@@ -5,7 +5,7 @@
         <el-sub-menu index="1">
           <template #title>
             <el-icon><location /></el-icon>
-            <span>Navigator Onssses</span>
+            <span>Navigator Onsssses</span>
           </template>
           <el-menu-item-group>
             <template slot="title">分组一</template>
