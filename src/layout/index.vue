@@ -1,23 +1,11 @@
 <template>
   <div class="layout">
     <div class="layout-side">
-      <el-button>保持</el-button>
-      <el-switch
-        v-model="value2"
-        class="ml-2"
-        style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
-      />
-      <!-- <el-menu
-        default-active="2"
-        class="el-menu-vertical-demo"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b"
-      >
-        <el-submenu index="1">
-          <template slot="title">
-            <i class="el-icon-location"></i>
-            <span>导航一</span>
+      <el-menu default-active="2" class="el-menu-vertical-demo">
+        <el-sub-menu index="1">
+          <template #title>
+            <el-icon><location /></el-icon>
+            <span>Navigator Onssses</span>
           </template>
           <el-menu-item-group>
             <template slot="title">分组一</template>
@@ -31,7 +19,7 @@
             <template slot="title">选项4</template>
             <el-menu-item index="1-4-1">选项1</el-menu-item>
           </el-submenu>
-        </el-submenu>
+        </el-sub-menu>
         <el-menu-item index="2">
           <i class="el-icon-menu"></i>
           <span slot="title">导航二</span>
@@ -44,7 +32,7 @@
           <i class="el-icon-setting"></i>
           <span slot="title">导航四</span>
         </el-menu-item>
-      </el-menu> -->
+      </el-menu>
     </div>
     <div class="layout-content">
       <router-view></router-view>
