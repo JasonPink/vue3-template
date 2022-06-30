@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+
 // import ElementPlus from 'unplugin-element-plus/vite';
 // import AutoImport from 'unplugin-auto-import/vite';
 // import Components from 'unplugin-vue-components/vite';
@@ -7,6 +9,11 @@ import vue from '@vitejs/plugin-vue';
 import * as path from 'path';
 
 export default defineConfig({
+  define: {
+    //fix "path" module issue
+    'process.platform': null,
+    'process.version': null,
+  },
   server: {
     hmr: true,
   },
@@ -24,6 +31,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    vueJsx(),
     // ElementPlus({
     //   // importStyle: 'SASS',
     //   useSource: true,

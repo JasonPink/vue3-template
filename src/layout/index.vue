@@ -5,12 +5,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
-import SideBar from './components/SideBar/index.vue';
-import AppMain from './components/AppMain.vue';
+import { SideBar, AppMain } from './components';
 </script>
 <style scoped lang="scss">
 .layout-wrapper {
   display: flex;
+  height: 100vh;
 }
 </style>

@@ -6,23 +6,17 @@
       @open="handleOpen"
       @close="handleClose"
     >
-      <sub-item
-        v-for="(route, index) in routes"
-        :option="route"
-        :index="index + ''"
+      <sidebar-item
+        v-for="route in routes"
+        :item="route"
         :key="route.path"
+        :base-path="route.path"
       />
     </el-menu>
   </div>
 </template>
 <script setup lang="ts">
-import SubItem from './Item.vue';
-// import {
-//   Document,
-//   Menu as IconMenu,
-//   Location,
-//   Setting,
-// } from '@element-plus/icons-vue';
+import SidebarItem from './SidebarItem.vue';
 import { routes } from '@/router/index';
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
