@@ -5,6 +5,11 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
+      :background-color="'#304156'"
+      :text-color="'#bfcbd9'"
+      :unique-opened="false"
+      :active-text-color="'#409eff'"
+      :collapse-transition="false"
     >
       <sidebar-item
         v-for="route in routes"
@@ -18,6 +23,8 @@
 <script setup lang="ts">
 import SidebarItem from './SidebarItem.vue';
 import { routes } from '@/router/index';
+// import variables from '@/assets/styles/variables.scss';
+
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
