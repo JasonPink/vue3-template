@@ -14,5 +14,6 @@ const cachedViews = reactive([]);
 <style scoped lang="scss">
 .layout-main {
   flex: 1;
+  height: 100vh;
 }
 </style>

@@ -33,36 +33,11 @@
 <script setup lang="ts">
 import path from 'path';
 import { ref } from 'vue';
-import { RouteRecordRaw } from 'vue-router';
+// import { RouteItemTy } from '@/';
+import { RouteItemTy } from '@/types/router';
 import Item from './Item';
 import Link from './Link.vue';
 
-interface RouteItemTy {
-  hidden?: boolean;
-  alwaysShow?: boolean;
-  code?: number;
-  name?: string;
-  fullPath?: string;
-  path?: string;
-  meta?: {
-    title: string;
-    icon?: string;
-    affix?: boolean;
-    activeMenu?: string;
-    breadcrumb?: boolean;
-    roles?: Array<string>;
-    elSvgIcon?: string;
-    code?: number;
-    cachePage?: boolean;
-    leaveRmCachePage?: boolean;
-    closeTabRmCache?: boolean;
-  };
-  children?: RouterTy;
-  redirect?: string;
-}
-
-type RouterRowTy = RouteRecordRaw & RouteItemTy;
-type RouterTy = Array<RouterRowTy>;
 const props = defineProps({
   item: {
     type: Object,

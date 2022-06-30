@@ -1,9 +1,10 @@
-import { createPinia } from "pinia";
-import { useUserStore } from "./modules/user";
+import { createPinia } from 'pinia';
+import { useUserStore } from './modules/user';
+import { useAppStore } from './modules/app';
 
-import { useTalentStore } from "./modules/talent";
-import { useVideoStore } from "./modules/video";
-import { useGoodsStore } from "./modules/goods";
+import { useTalentStore } from './modules/talent';
+import { useVideoStore } from './modules/video';
+import { useGoodsStore } from './modules/goods';
 // COMPONENT IMPORTS
 
 const pinia = createPinia();
@@ -13,6 +14,7 @@ export {
   useTalentStore,
   useVideoStore,
   useGoodsStore,
+  useAppStore,
   // COMPONENT EXPORTS
 };
 export default pinia;

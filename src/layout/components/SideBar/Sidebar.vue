@@ -1,5 +1,6 @@
 <template>
   <div class="layout-side">
+    <Logo v-if="appStore.getAppSettings.showLogo" />
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
@@ -21,9 +22,12 @@
   </div>
 </template>
 <script setup lang="ts">
+import Logo from './Logo.vue';
 import SidebarItem from './SidebarItem.vue';
 import { routes } from '@/router/index';
+import { useAppStore } from '@/store';
 // import variables from '@/assets/styles/variables.scss';
+const appStore = useAppStore();
 
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);

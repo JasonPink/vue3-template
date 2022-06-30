@@ -1,18 +1,20 @@
-const fs = require("fs");
+import path from 'path';
+import fs from 'fs';
+
 function getFolder(path) {
   let components = [];
   const files = fs.readdirSync(path);
   files.forEach(function (item) {
-    let stat = fs.lstatSync(path + "/" + item);
-    if (stat.isDirectory() === true && item != "components") {
-      components.push(path + "/" + item);
-      components.push.apply(components, getFolder(path + "/" + item));
+    let stat = fs.lstatSync(path + '/' + item);
+    if (stat.isDirectory() === true && item != 'components') {
+      components.push(path + '/' + item);
+      components.push.apply(components, getFolder(path + '/' + item));
     }
   });
   return components;
 }
 module.exports = {
-  description: "创建全局模块化状态",
+  description: '创建全局模块化状态',
   prompts: [
     // {
     //   type: "list",
@@ -21,12 +23,12 @@ module.exports = {
     //   choices: getFolder("src/store"),
     // },
     {
-      type: "input",
-      name: "name",
-      message: "请输入模块名称",
+      type: 'input',
+      name: 'name',
+      message: '请输入模块名称',
       validate: (v) => {
-        if (!v || v.trim === "") {
-          return "模块名称不能为空";
+        if (!v || v.trim === '') {
+          return '模块名称不能为空';
         } else {
           return true;
         }
@@ -36,22 +38,22 @@ module.exports = {
   actions: (data) => {
     const actions = [
       {
-        type: "add",
+        type: 'add',
         path: `src/store/modules/{{camelCase name}}/index.ts`,
-        templateFile: "plop-tpls/store/index.hbs",
+        templateFile: 'plop-tpls/store/index.hbs',
       },
       {
-        path: "src/store/index.ts",
+        path: 'src/store/index.ts',
         pattern: /(\/\/ COMPONENT IMPORTS)/g,
         template:
           "import { use{{properCase name}}Store } from './modules/{{name}}';\n$1",
-        type: "modify",
+        type: 'modify',
       },
       {
-        path: "src/store/index.ts",
+        path: 'src/store/index.ts',
         pattern: /(\/\/ COMPONENT EXPORTS)/g,
-        template: "\tuse{{properCase name}}Store,\n$1",
-        type: "modify",
+        template: '\tuse{{properCase name}}Store,\n$1',
+        type: 'modify',
       },
     ];
     return actions;
